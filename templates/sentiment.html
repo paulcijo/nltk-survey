@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href = "{{ url_for('static', filename='bootstrap.min.css')}}">
+        <script src = "{{ url_for('static', filename='bootstrap.min.js')}}"></script>
+    </head>
+    <body>
+        <div class= "container">
+            <h1> Sentiment Analysis of: </h1>
+            {% if text %}
+                <p class = "lead">{{ text }}</p>
+            {% endif %}
+            {% if polarity >= 0%}
+                <p class = "lead">{{ polarity }} positive!</p>
+            {% else %}
+                <p class = "lead">{{ polarity }} Negative!</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
